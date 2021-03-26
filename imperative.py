@@ -1,13 +1,25 @@
 def get_names(peoples_list):
+    '''
+    Function to get all names in a list with dictionaries
+    :param peoples_list: list with peoples data
+    :return: list with all names
+    '''
     for people in peoples_list:
         names_list.append(people['name'])
     return names_list
 
-def search_obeses_imperative(peoples_list):
+
+def search_obese(peoples_list):
+    '''
+    Function to get people with BMI higher than 30 in as list with dictionaries
+    :param peoples_list: list with peoples data
+    :return: list with obese people
+    '''
     for people in peoples_list:
         if people['imc'] >= 30:
-            obeses_list.append(people)
-    return obeses_list
+            people_with_obesity.append(people)
+    return people_with_obesity
+
 
 peoples = [{'name': 'Joao', 'imc': 27},
          {'name': 'Cleiton', 'imc': 21},
@@ -16,6 +28,7 @@ peoples = [{'name': 'Joao', 'imc': 27},
          {'name': 'Daniela', 'imc': 31}
 ]
 
+#Geting names
 names_list = []
 names_list = get_names(peoples_list=peoples)
 other_names_list = get_names(peoples_list=peoples)
@@ -23,6 +36,19 @@ other_names_list = get_names(peoples_list=peoples)
 print(f'Names: {names_list}')
 print(f'Other names: {other_names_list}')
 
-obeses_list = []
-obeses_list = search_obeses_imperative(peoples_list=peoples)
-print(f'Obeses: {obeses_list}')
+#Geting people with obesity
+people_with_obesity = []
+people_with_obesity = search_obese(peoples_list=peoples)
+print(f'Peoples with obesity: {people_with_obesity}')
+
+
+#Geting higher BMI
+bmi_list = []
+for people in peoples:
+    if people['imc'] >= 30:
+        bmi_list.append(int(people['imc']))
+higher_bmi = 0
+for bmi in bmi_list:
+    if higher_bmi < bmi:
+        higher_bmi = bmi
+print(f'Higher BMI: {higher_bmi}')
