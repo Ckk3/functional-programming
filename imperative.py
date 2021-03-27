@@ -38,8 +38,9 @@ print(f'Other names: {other_names_list}')
 #Geting people with obesity
 people_with_obesity = []
 people_with_obesity = search_obese(peoples_list=peoples)
+other_people_with_obesity = search_obese(peoples_list=peoples)
 print(f'Peoples with obesity: {people_with_obesity}')
-
+print(f'Other peoples with obesity: {other_people_with_obesity}')
 
 #Geting higher BMI
 bmi_list = []

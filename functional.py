@@ -43,7 +43,9 @@ print(f'Other names: {other_names_list}')
 
 #Geting people with obesity using list()
 people_with_obesity = list(filter(search_obese, peoples))
+other_people_with_obesity = list(filter(search_obese, peoples))
 print(f'Peoples with obesity: {people_with_obesity}')
+print(f'Other peoples with obesity: {other_people_with_obesity}')
 
 #Geting higher BMI using reduce()
 bmi_list = list(map(lambda p: p['bmi'], peoples))
